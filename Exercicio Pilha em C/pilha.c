@@ -9,6 +9,8 @@ typedef struct
 
 pilha * alocar ( int tamanho);
 void menu(pilha * p);
+
+
 int main ()
 {
 	pilha * p;
@@ -74,3 +76,31 @@ void menu(pilha * p)
 	
 	
 }
+
+//Emseri na pilha
+int empilhar(Pilha * vetor; int tamanho){
+	if(pilha == NULL){
+		return 0;
+	}
+	if (pilha.qtd == tamanho){
+		printf("Pilha Cheia !");
+	}
+	pilha->elemento[pilha->qtd] = elemento;
+	pilha->qtd++;
+	return 1;
+}
+//Retira da pilha
+
+int desempilha (Pilha * vetor; int item){
+	if(pilha == NULL){
+		printf("Pilha não inicializada");	
+	}
+	if(pilha == 0){
+		printf("pilha vazia");
+	}
+	pilha->elemento[pilha->qtd] = null;
+	pilha->qtd--;
+	
+}
+
+
