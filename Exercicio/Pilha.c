@@ -80,20 +80,33 @@ int retira_lista(lista* l, int x){
                 return 1;
             }
         }
-
     }
-    
-
-
-    if(l->qtd == 0){
-        printf("\n lista vazia");
-    }else{
-
-
-    }
-
 }
 
-////
+void mostrsr(lista * l){
+    Elemnto *aux;
+    if(l->qtd == 0){
+        printf("\n lista vazia");
+        return 0;
+    }else{
+        aux = l->inicio;
+        printf("%d",auxe->valor);
+        while(aux->prox != NULL){
+            aux = aux->prox;
+            printf("%d",auxe->valor);
+        }
+    }
+}
 
-
+int bustar(lista *l, int x){
+    elemnto *aux;
+    if(l->qtd == 0){
+        return 0;
+    }else{
+        aux = l->inicio;
+        while(aux->valor != x){
+            aux = aux->prox;
+        }
+        return aux->valor;
+    }
+}
