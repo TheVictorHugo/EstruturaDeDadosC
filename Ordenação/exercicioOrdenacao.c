@@ -3,7 +3,7 @@
 #include <string.h>
 
 //prototipagem
-void bubble(int vet[], int tam);
+void bubbleSort(int vet[], int tam);
 void selectionSort(int vet[], int tam);
 void imprimir(int vet[],int tam);
 void selectionSort(int vet[], int tam);
@@ -14,37 +14,71 @@ void intercala(int vet[], int ini,int meio,int fim);
 
 int main(){
 	int vet[10] = {3,5,1,8,9,2,6,7,4,10};
-    int tam;
-    int n;
-    int i;
-    
+    int tam = 10;
+    int opcao;
+    int i,n;
+
     printf("\nDigite o quantos numeros serao gerados: ");
     scanf("%d",&n);
+    
+    for(i=0;i<n;i++){
+       vet[i] = (rand()%100);
+       printf("\n%d", vet[i]);
+    }
+    //imprimir(vet, n);
+    do{
+
+        printf("\n===================================================");
+        printf("\n0 - sair");
+        printf("\n1 - selectionSort");
+        printf("\n2 - quickSort");
+        printf("\n3 - bubbleSort");
+        printf("\n4 - insertionSort");
+        printf("\n5 - mergSort");
+        printf("\n6 - imprimir");
+
+        printf("\n===================================================\n");
+        scanf("%d", &opcao);
+
+
+        switch(opcao){
+            case 1:
+            selectionSort(vet,tam);
+            break;
+            case 2:
+            quickSort(vet,0,tam-1);
+            break;
+            case 3:
+            bubbleSort(vet, tam);
+            break;
+            case 4:
+            insertionSort(vet, tam);
+            break;
+            case 5:
+            mergSort(vet, 0, tam);
+            break;
+            case 6:
+            imprimir(vet, tam);
+            break;
+        };
+
+    }while(opcao != 0);
     /*
+    printf("\nDigite o quantos numeros serao gerados: ");
+    scanf("%d",&n);
+    
     for(i=0;i<n;i++){
        tam[i] = (rand()%100);
        printf("%d", tam[i]);
     }*/
 	
-	imprimir(vet, tam);
-	
-    bubble(vet, tam);
-    selectionSort(vet,tam);
-    quickSort(vet,0,tam-1 );
-    nsertionSort(vet, tam);
-    mergSort(vet, 0, tam);
-    
-    imprimir(vet, tam);
-    
-	
-	//selectionSort(vet,tam);
-	//imprimir(vet, tam);
+  
 
 	return 1;	
 }
 
 // Bubble Sort
-void bubble(int vet[], int tam){
+void bubbleSort(int vet[], int tam){
 	int i,j,aux;
 	for(i=0;i<tam;i++){ // for para percorre todo o vetor
 		for(j=0;j< tam-1;j++){
@@ -191,7 +225,7 @@ void intercala(int vet[], int ini,int meio,int fim){
 void imprimir(int vet[],int tam){
 	int i;
 	for(i = 0; i< tam; i++ ){
-		printf("%d", vet[i]);
+		printf("\n%d", vet[i]);
 	}
 	printf("\n");
 }
